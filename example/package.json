@@ -1,0 +1,14 @@
+{
+  "name": "example-now-env",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "now-env": "1.0.0"
+  },
+  "now": {
+    "env": {
+      "NODE_ENV": "production",
+      "TEST": "my-test-env"
+    }
+  }
+}
