@@ -1,6 +1,6 @@
 {
   "name": "now-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use now.sh environment variables in development",
   "main": "index.js",
   "repository": "sergiodxa/now-env",
