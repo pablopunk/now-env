@@ -1,0 +1,10 @@
+{
+  "name": "now-env",
+  "version": "1.0.0",
+  "description": "Use now.sh environment variables in development",
+  "main": "index.js",
+  "repository": "sergiodxa/now-env",
+  "author": "Sergio Daniel Xalambrí <sergiodxa@gmail.com>",
+  "license": "MIT",
+  "bin": "./index.js"
+}
