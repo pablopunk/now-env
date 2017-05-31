@@ -6,5 +6,4 @@
   "repository": "sergiodxa/now-env",
   "author": "Sergio Daniel Xalambrí <sergiodxa@gmail.com>",
   "license": "MIT",
-  "bin": "./index.js"
 }
