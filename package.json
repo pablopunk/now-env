@@ -1,7 +1,14 @@
 {
   "name": "now-env",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Use now.sh environment variables in development",
+  "keywords": [
+    "now",
+    "environment",
+    "env",
+    "var",
+    "secret"
+  ],
   "main": "index.js",
   "repository": "sergiodxa/now-env",
   "author": "Sergio Daniel Xalambrí <sergiodxa@gmail.com>",
