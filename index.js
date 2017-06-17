@@ -7,7 +7,7 @@ const applyEnv = (env, secrets) => {
   for (const key in env) {
     // if the key already exists don't overwrite it
     if (!process.env[key]) {
-      const value = secrets[env[key]] || env[key]
+      const value = secrets[env[key]] || secrets[env[key].slice(1)] || env[key]
       process.env[key] = value
     }
   }

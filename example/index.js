@@ -1,2 +1,2 @@
-require('now-env').config()
+require('../index').config()
 console.log(process.env)
