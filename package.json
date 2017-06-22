@@ -1,6 +1,6 @@
 {
   "name": "now-env",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Use now.sh environment variables in development",
   "keywords": [
     "now",
