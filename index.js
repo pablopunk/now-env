@@ -3,11 +3,19 @@
 const { existsSync } = require('fs')
 const { resolve } = require('path')
 
+const getValue = (env, secrets, key) => {
+  const value = `${env[key]}`
+  if (value.indexOf('@') !== 0) return value
+  const secret = secrets[env[key]]
+  if (secret !== undefined) return secret
+  return secrets[env[key].slice(1)]
+}
+
 const applyEnv = (env, secrets) => {
   for (const key in env) {
     // if the key already exists don't overwrite it
     if (!process.env[key]) {
-      const value = secrets[env[key]] || secrets[env[key].slice(1)] || env[key]
+      const value = getValue(env, secrets, key)
       process.env[key] = value
     }
   }
