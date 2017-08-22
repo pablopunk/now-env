@@ -3,7 +3,7 @@
 const { existsSync } = require('fs')
 const { resolve } = require('path')
 
-const getValue = (env, secrets, key) => {
+function getValue(env, secrets, key) {
   const value = `${env[key]}`
   if (value.indexOf('@') !== 0) return value
   const secret = secrets[env[key]]
@@ -11,7 +11,7 @@ const getValue = (env, secrets, key) => {
   return secrets[env[key].slice(1)]
 }
 
-const applyEnv = (env, secrets) => {
+function applyEnv(env, secrets) {
   for (const key in env) {
     // if the key already exists don't overwrite it
     if (!process.env[key]) {
@@ -21,7 +21,7 @@ const applyEnv = (env, secrets) => {
   }
 }
 
-const loadSecrets = () => {
+function loadSecrets() {
   const SECRET_PATH = resolve('./now-secrets.json')
   if (existsSync(SECRET_PATH)) {
     return require(SECRET_PATH)
@@ -29,28 +29,28 @@ const loadSecrets = () => {
   return {}
 }
 
-const config = () => {
-  // only run this in a non-production environment
-  if (process.env.NODE_ENV !== 'production') {
-    const secrets = loadSecrets()
+function config() {
+  // only run this if it's not running inside Now.sh
+  if (Boolean(process.env.NOW)) return
 
-    const NOW_PATH = resolve('./now.json')
+  const secrets = loadSecrets()
 
-    if (existsSync(NOW_PATH)) {
-      const nowFile = require(NOW_PATH)
+  const NOW_PATH = resolve('./now.json')
 
-      if (nowFile.env) {
-        return applyEnv(nowFile.env, secrets)
-      }
+  if (existsSync(NOW_PATH)) {
+    const nowFile = require(NOW_PATH)
+
+    if (nowFile.env) {
+      return applyEnv(nowFile.env, secrets)
     }
+  }
 
-    const PKG_PATH = resolve('./package.json')
+  const PKG_PATH = resolve('./package.json')
 
-    const pkgFile = require(PKG_PATH)
+  const pkgFile = require(PKG_PATH)
 
-    if (pkgFile.now && pkgFile.now.env) {
-      return applyEnv(pkgFile.now.env, secrets)
-    }
+  if (pkgFile.now && pkgFile.now.env) {
+    return applyEnv(pkgFile.now.env, secrets)
   }
 }
 
