@@ -1,6 +1,6 @@
 {
   "name": "now-env",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Use now.sh environment variables in development",
   "keywords": [
     "now",
@@ -25,6 +25,12 @@
   },
   "license": "MIT",
   "files": [
+    "lib/apply-env.js",
+    "lib/get-value.js",
+    "lib/load-now-json.js",
+    "lib/load-pkg-json.js",
+    "lib/load-required.js",
+    "lib/load-secrets.js",
     "index.js"
   ]
 }
