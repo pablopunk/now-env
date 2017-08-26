@@ -8,8 +8,10 @@
   "now": {
     "env": {
       "NODE_ENV": "production",
-      "TEST": "my-test-env",
-      "SECRET": "@my-secret-key"
+      "TEST": "my-test-env-package.json",
+      "SECRET": "@my-secret-key",
+      "ANOTHER_SECRET": "@my-other-secret-key",
+      "SECRET_FAIL": "@this-is-not-defined"
     }
   }
 }
