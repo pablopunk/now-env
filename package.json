@@ -1,16 +1,30 @@
 {
   "name": "now-env",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Use now.sh environment variables in development",
   "keywords": [
     "now",
+    "zeit",
+    "now.sh",
     "environment",
     "env",
     "var",
-    "secret"
+    "variable",
+    "variables",
+    "secret",
+    "secrets"
   ],
   "main": "index.js",
   "repository": "sergiodxa/now-env",
-  "author": "Sergio Daniel Xalambrí <sergiodxa@gmail.com>",
-  "license": "MIT"
+  "homepage": "https://github.com/sergiodxa/now-env",
+  "bugs": "https://github.com/sergiodxa/now-env/issues",
+  "author": {
+    "name": "Sergio Daniel Xalambrí",
+    "email": "sergiodxa@gmail.com",
+    "url": "https://sergio.now.sh/"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
 }
