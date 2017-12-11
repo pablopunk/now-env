@@ -1,9 +1,11 @@
 # now-env
 
 
-With the help of this package, you can easily set environment variables for the use in development. If you're already using a `now.json` file or the `now` key in `package.json`, the `env` sub property will be assigned to `process.env` automatically.
+With the help of this package, you can easily set environment variables for the use in development.
 
-In addition, you can use `now-secrets.json` for storing secrets that are specific to the development environment.
+If you're already using a `now.json` file or the `now` key in `package.json`, the `env` sub property will be assigned to `process.env` automatically.
+
+In addition, you can store secrets locally, that are specific to the development environment.
 
 ## Usage
 
