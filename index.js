@@ -9,7 +9,7 @@ const loadPkgJSON = require('./lib/load-pkg-json.js')
 /**
  * Check if is running inside Now.sh and apply variables and secrets to `process.env`
  */
-function config() {
+function config () {
   // only run this if it's not running inside Now.sh
   if (Boolean(process.env.NOW)) return
 
@@ -26,4 +26,5 @@ function config() {
   }
 }
 
-exports.config = config
+// run
+config()
