@@ -29,7 +29,7 @@ That's all, you can now check in `process.env` for you environment variables!
 
 > If your application is running inside [Now](https://zeit.co/now) cloud then this module is not going to do anything and let Now set your environment variables.
 
-## Secrets
+### Secrets
 
 Most probably you will want to use [secret keys](https://zeit.co/docs/features/env-and-secrets#securing-env-variables-using-secrets) in your `now.json` file. This module allow you to use them too without worries in development.
 
@@ -58,7 +58,7 @@ Then create a `now-secrets.json` with the secrets names and values.
 
 Then when starting your application `now-env` will read the `now.json` and get the values from `now-secrets.json`. If a environment key can't be found in `now-secrets.json` (or the file doesn't exists) then is going to use the secret name as value, that means if `DB_PASS` is `@db_pass` and you don't define it inside `now-secrets.json` then the value will be `@db_pass`.
 
-## Required Variables
+### Required Variables
 
 Now supports using the `env` key as an array of required values you'll need to provide when deploying. This module also allow you to use them in development.
 
